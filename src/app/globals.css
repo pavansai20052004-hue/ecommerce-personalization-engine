@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --bg: #0b0c14;
+  --surface: #13141f;
+  --surface-raised: #1e2030;
+  --border: #2a2c3e;
+  --text: #e4e5eb;
+  --text-muted: #8b8d9e;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* Confidence bar animation */
+@keyframes fill-bar {
+  from {
+    width: 0%;
+  }
+}
+.confidence-bar {
+  animation: fill-bar 0.6s ease-out;
+}
+
+/* Pulse for live indicator */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Event entry animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+.event-enter {
+  animation: slide-in 0.25s ease-out;
+}
+
+/* Score bar transition */
+.score-bar {
+  transition: width 0.4s ease-out;
+}
